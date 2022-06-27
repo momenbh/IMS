@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Backend\ProductController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+
+
+Route::get('/product/view',[ProductController::class,'view'])->name('view.product');
+Route::get('/product/from',[ProductController::class,'from'])->name('from.product');
+Route::post('/product/store',[ProductController::class,'store'])->name('store.product');
