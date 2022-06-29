@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ChatagoryController;
+use App\Http\Controllers\Backend\DepartmentController;
 
 
 /*
@@ -33,3 +34,9 @@ Route::post('/product/store',[ProductController::class,'store'])->name('store.pr
  Route::get('/chatagory/view',[ChatagoryController::class,'view'])->name('view.chatagory');
  Route::get('/chatagory/from',[ChatagoryController::class,'from'])->name('from.chatagory');
  Route::post('/chatagory/store',[ChatagoryController::class,'store'])->name('store.chatagory');
+
+//  department operation.
+
+Route::get('/department/view',[DepartmentController::class,'view'])->name('view.department');
+Route::get('/department/form',[DepartmentController::class,'form'])->name('form.department');
+Route::post('/department/store',[DepartmentController::class,'store'])->name('store.department');
